@@ -1,10 +1,10 @@
-const express = require('express');
-const http = require('http');
-const socketIO = require('socket.io');
+var express = require('express');
+var http = require('http');
+var socketIO = require('socket.io');
 
 // Создаем HTTP-сервер через Express
-const app = express();
-const server = http.createServer(app);
+var app = express();
+var server = http.createServer(app);
 
 // Подключаем Socket.IO к нашему серверу
 const io = socketIO(server);
