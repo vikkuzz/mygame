@@ -32,6 +32,7 @@ function create() {
   this.socket = io();
   this.otherPlayers = this.physics.add.group();
   this.socket.on('currentPlayers', function (players) {
+    console.log('soket on')
     Object.keys(players).forEach(function (id) {
       if (players[id].playerId === self.socket.id) {
         addPlayer(self, players[id]);
@@ -41,6 +42,7 @@ function create() {
     });
   });
   this.socket.on('newPlayer', function (playerInfo) {
+    console.log('soket on newPlayer')
     addOtherPlayers(self, playerInfo);
   });
   this.socket.on('disconnect', function (playerId) {
