@@ -28,7 +28,7 @@ function preload() {
  
 function create() {
   console.log('create')
-  var self = this;
+  const self = this;
   this.socket = io();
   this.otherPlayers = this.physics.add.group();
   console.log(this.socket)
