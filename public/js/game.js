@@ -31,6 +31,7 @@ function create() {
   var self = this;
   this.socket = io();
   this.otherPlayers = this.physics.add.group();
+  console.log(this.socket)
   this.socket.on('currentPlayers', function (players) {
     console.log('soket on')
     Object.keys(players).forEach(function (id) {
