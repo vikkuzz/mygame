@@ -11,6 +11,7 @@ let scores = {
   blue: 0,
   red: 0
 };
+console.log("game vercel")
 
 const gameHandler = (req, res) => {
   let io = new Server(createServer());
