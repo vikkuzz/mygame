@@ -16,6 +16,7 @@ var config = {
     update: update
   } 
 };
+console.log("game vercel3")
  
 var game = new Phaser.Game(config);
  

@@ -14,6 +14,7 @@ let scores = {
 console.log("game vercel")
 
 const gameHandler = (req, res) => {
+  console.log("game vercel2")
   let io = new Server(createServer());
 
   io.on('connection', (socket) => {
