@@ -76,6 +76,6 @@ io.on('connection', function (socket) {
 
 });
  
-server.listen(3000, function () {
+server.listen(443, function () {
   console.log(`Прослушиваем ${server.address().port}`);
 });
