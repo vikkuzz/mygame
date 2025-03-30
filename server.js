@@ -7,13 +7,7 @@ var app = express();
 var server = http.createServer(app);
 
 // Подключаем Socket.IO к нашему серверу
-const io = socketIO(server, {
-  cors: {
-    origin: ['http://localhost:3000'], // Указываете домены, которым разрешено делать запросы
-    methods: ["GET", "POST"],          // Методы, которые разрешаются
-    allowedHeaders: ["Content-Type"]   // Заголовки, которые разрешаются
-  }
-});
+var io = socketIO(server);
 
 var players = {};
 
@@ -27,11 +21,6 @@ var scores = {
 };
  
 app.use(express.static(__dirname + '/public'));
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // разрешаем запросы с любого домена
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
  
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
