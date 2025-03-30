@@ -7,7 +7,13 @@ var app = express();
 var server = http.createServer(app);
 
 // Подключаем Socket.IO к нашему серверу
-const io = socketIO(server);
+const io = socketIO(server, {
+  cors: {
+    origin: ['http://localhost:3000'], // Указываете домены, которым разрешено делать запросы
+    methods: ["GET", "POST"],          // Методы, которые разрешаются
+    allowedHeaders: ["Content-Type"]   // Заголовки, которые разрешаются
+  }
+});
 
 var players = {};
 
