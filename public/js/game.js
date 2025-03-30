@@ -29,7 +29,7 @@ function preload() {
 function create() {
   console.log('create')
   const self = this;
-  this.socket = io("https://mygame-lac.vercel.app/");
+  this.socket = io('/api/socket-io');
   this.otherPlayers = this.physics.add.group();
   console.log(this.socket)
   this.socket.on('currentPlayers', function (players) {
